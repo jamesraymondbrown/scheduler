@@ -4,12 +4,9 @@ import classNames from "classnames";
 
 export default function DayListItem(props) {
 
-  console.log("spotslog", props.spots);
-  // const [spotsRemainingMessage, setSpotsRemainingMessage] = useState(`${props.spots} spots remaining`)
-
   const formatSpots = function (spots) {
     let spotsRemainingMessage = `${spots} spots remaining`
-    
+
     if (spots === 0) {
       spotsRemainingMessage = "no spots remaining";
     } else if (spots === 1) {
