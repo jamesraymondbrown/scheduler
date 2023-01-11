@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from 'react'
 import Show from "./Show";
 import Empty from "./Empty";
 import Header from "./Header"
@@ -9,8 +9,7 @@ export default function Appointment(props) {
 
   return (
     <article className="appointment">
-      <Show />
-      <Confirm />
+      <Appointment />
     </article>
 
   );
