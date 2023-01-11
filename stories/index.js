@@ -59,13 +59,13 @@ storiesOf("DayList", module)
     backgrounds: [{ name: "dark", value: "#222f3e", default: true }],
   })
   .add("Monday", () => (
-    <DayList days={days} day={"Monday"} setDay={action("setDay")} />
+    <DayList days={days} value={"Monday"} onChange={action("setDay")} />
   ))
   .add("Tuesday", () => (
-    <DayList days={days} day={"Tuesday"} setDay={action("setDay")} />
+    <DayList days={days} value={"Tuesday"} onChange={action("setDay")} />
   ))
   .add("Wednesday", () => (
-      <DayList days={days} day={"Wednesday"} setDay={action("setDay")} />
+    <DayList days={days} value={"Wednesday"} onChange={action("setDay")} />
   ));
 
 import InterviewerListItem from "components/InterviewerListItem";
@@ -97,10 +97,9 @@ storiesOf("InterviewerListItem", module)
   ))
   .add("Clickable", () => (
     <InterviewerListItem
-      id={interviewer.id}
       name={interviewer.name}
       avatar={interviewer.avatar}
-      setInterviewer={action("setInterviewer")}
+      setInterviewer={() => action("setInterviewer")(interviewer.id)}
     />
   ));
 
@@ -135,3 +134,31 @@ storiesOf("InterviewerList", module)
       setInterviewer={action("setInterviewer")}
     />
   ));
+
+import Appointment from "components/Appointment/index.js";
+import Header from "components/Appointment/Header"
+import Empty from "components/Appointment/Empty"
+
+storiesOf("Appointment", module)
+  .addParameters({
+    backgrounds: [{ name: "white", value: "#fff", default: true }]
+  })
+  .add("Appointment", () => (
+    <Appointment />
+  ))
+  .add("Appointment with Time", () => (
+    <Appointment 
+      time="12pm" 
+    />
+  ))
+  .add("Header", () => (
+    <Header 
+      time="12pm"
+    />
+  ))
+  .add("Empty", () => (
+    <Empty 
+      onAdd={action("onAdd")}
+    />
+  ));
+

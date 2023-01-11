@@ -7,7 +7,12 @@ export default function InterviewerList(props) {
   const formattedInterviewers = props.interviewers.map((interviewer) => {
 
     return (
-      <InterviewerListItem key={interviewer.id} id={interviewer.id} name={interviewer.name} avatar={interviewer.avatar} selected={interviewer.id === props.interviewer} setInterviewer={props.setInterviewer} />
+      <InterviewerListItem 
+        key={interviewer.id} 
+        name={interviewer.name} 
+        avatar={interviewer.avatar} 
+        selected={interviewer.id === props.value} 
+        setInterviewer={(event) => props.onChange(interviewer.id)} />
     );
   });
 
@@ -18,3 +23,9 @@ export default function InterviewerList(props) {
     </section>
   );
 }
+
+
+//interviewerListItem previously returned with these values:
+
+// selected={interviewer.id === props.interviewer} 
+// setInterviewer={(event) => props.setInterviewer(interviewer.id)} /> -- changing it to onChange and value broke it in storybook, but compass told me to do that
