@@ -9,7 +9,7 @@ export default function useVisualMode(initialMode) {
   const transition = function(arg, replace = false) {
     setMode(arg)
     const newHistory = [...history];
-    if (replace != false) {
+    if (replace !== false) {
       newHistory.pop();
       newHistory.push(arg)
     } else {
