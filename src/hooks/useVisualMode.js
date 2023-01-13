@@ -16,6 +16,11 @@ export default function useVisualMode(initialMode) {
       newHistory.push(arg);
     }
     setHistory(newHistory);
+
+    // Find a way to use prev here instead of "history". That will guard against stale state!!! 
+    // This can maybe help - https://blog.logrocket.com/accessing-previous-props-state-react-hooks/ 
+    // Andy's example: 
+    // setHistory(prev => ([...prev, CREATE]))
   };
 
   const back = function() {
