@@ -10,7 +10,7 @@ import Form from './Form';
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
 const CREATE = "CREATE";
-const interviewers = [];
+//const interviewers = [];
 
 export default function Appointment(props) {
 
@@ -30,12 +30,11 @@ export default function Appointment(props) {
       )}
       {mode === CREATE && (
         <Form
-          interviewers={[]}
+          interviewers={props.interviewers}
           onSave={props.onSave}
           onCancel={back}
         />
       )}
-      {/* {props.interview ? <Show student={props.interview.student} interviewer={props.interview.interviewer} /> : <Empty />} */}
     </article>
 
   );
