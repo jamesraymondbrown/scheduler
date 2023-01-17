@@ -4,9 +4,12 @@ import "components/InterviewerList.scss";
 
 export default function InterviewerList(props) {
 
+  // console.log('preselect', props.preSelectInterviewer)
+
   const formattedInterviewers = props.interviewers.map((interviewer) => {
 
     return (
+
       <InterviewerListItem 
         key={interviewer.id} 
         name={interviewer.name} 

@@ -25,7 +25,7 @@ export default function Form(props) {
             className="appointment__create-input text--semi-bold"
             name="name"
             type="text"
-            placeholder="Enter Student Name"
+            placeholder={ props.student ? props.student : "Enter Student Name" }
             onChange={(event) => setStudent(event.target.value)}
             required
           />
@@ -35,6 +35,7 @@ export default function Form(props) {
           interviewers={props.interviewers}
           onChange={setInterviewer}
           value={interviewer}
+          preSelectInterviewer={props.preSelectInterviewer ? props.preSelectInterviewer : undefined}
         />
       </section>
       <section className="appointment__card-right">
