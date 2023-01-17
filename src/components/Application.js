@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "components/Application.scss";
 import DayList from "./DayList";
 import Appointment from "./Appointment";
-import axios from 'axios';
 import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors";
 import useApplicationData from "hooks/useApplicationData";
 
@@ -17,7 +16,11 @@ export default function Application(props) {
 
   const dailyAppointments = getAppointmentsForDay(state, state.day);
 
-  const schedule = Object.values(dailyAppointments).map((appointment) => {
+  // console.log('applicationState', state.days)
+  // console.log('statelog', state)
+  
+
+  const appointments = Object.values(dailyAppointments).map((appointment) => {
 
     const interview = getInterview(state, appointment.interview);
     const dailyInterviewers = getInterviewersForDay(state, state.day);
@@ -54,7 +57,8 @@ export default function Application(props) {
         />
       </section>
       <section className="schedule">
-        {schedule}
+        {appointments}
+        <Appointment key="last" time="5pm" />
       </section>
       {/* {console.log('stateInterLog', state)} */}
     </main>

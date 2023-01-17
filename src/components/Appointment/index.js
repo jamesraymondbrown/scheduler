@@ -18,7 +18,7 @@ const DELETING = "DELETING";
 const CONFIRM = "CONFIRM";
 const EDIT = "EDIT";
 const ERROR_SAVE = "ERROR_SAVE";
-const ERROR_DELETE = "ERROR_DELETE"
+const ERROR_DELETE = "ERROR_DELETE";
 
 export default function Appointment(props) {
 
@@ -47,7 +47,10 @@ export default function Appointment(props) {
       
     props.bookInterview(props.id, interview)
       .then(() => transition(SHOW))
-      .catch(error => transition(ERROR_SAVE, true));
+      .catch((error) => {
+        console.log('error', error)
+        transition(ERROR_SAVE, true)
+      });
 
     // props.bookInterview(props.id, interview)
     // .then((res) => {
@@ -106,7 +109,6 @@ export default function Appointment(props) {
           student={props.interview.student}
           interviewer={props.interview.interviewer.id}
           id={props.id}
-          
         />
       )}
       {mode === CONFIRM && <Confirm onConfirm={onConfirm} onCancel={onCancel} message="Are you sure you want to delete?" id={props.id} />}
