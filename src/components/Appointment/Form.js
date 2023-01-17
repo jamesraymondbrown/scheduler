@@ -27,6 +27,7 @@ export default function Form(props) {
             type="text"
             placeholder="Enter Student Name"
             onChange={(event) => setStudent(event.target.value)}
+            required
           />
         </form>
         {/* <h1>{student}</h1> */}

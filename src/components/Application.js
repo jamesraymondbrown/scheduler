@@ -46,9 +46,10 @@ export default function Application(props) {
   }
 
   function cancelInterview(id) {
-    return axios.get(`http://localhost:8001/api/appointments/${id}`, {interview: null})
+
+    return axios.delete(`http://localhost:8001/api/appointments/${id}`, {interview: null})
     .then((res) => {
-      console.log('response', res);
+      //console.log('response', res);
       // setState({
       //   ...state,
       //   appointments
