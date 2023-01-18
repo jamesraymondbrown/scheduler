@@ -1,6 +1,6 @@
 # Interview Scheduler
 
-This is a single-page app built in React that allows users to add, delete, and modify appointments for an interview. It uses [a local API](https://github.com/jamesraymondbrown/scheduler-api) to populate the project with interviews, as well as store created interviews. 
+This is a single-page React app that allows users to add, delete, and modify appointments for an interview. It uses [a local API](https://github.com/jamesraymondbrown/scheduler-api) to populate the project with interviews, as well as store created interviews. 
 
 It was built using React, PSQL, Storybook, Jest, and Cypress. 
 
