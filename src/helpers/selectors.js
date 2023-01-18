@@ -13,28 +13,28 @@ export function getAppointmentsForDay(state, day) {
   }
 
   for (let appointment of appointments) {
-    results.push(state.appointments[appointment])
+    results.push(state.appointments[appointment]);
   }
 
   return results;
-};
+}
 
 export function getInterview(state, interview) {
   const results = {};
 
   if (interview === null) {
     return null;
-  };
+  }
 
-  results.student = interview.student
+  results.student = interview.student;
   results.interviewer = {
     id: interview.interviewer,
     name: state.interviewers[interview.interviewer].name,
-    avatar: state.interviewers[interview.interviewer].avatar
+    avatar: state.interviewers[interview.interviewer].avatar,
   };
 
   return results;
-};
+}
 
 export function getInterviewersForDay(state, day) {
   let interviewers = [];
@@ -51,8 +51,8 @@ export function getInterviewersForDay(state, day) {
   }
 
   for (let interviewer of interviewers) {
-    results.push(state.interviewers[interviewer])
+    results.push(state.interviewers[interviewer]);
   }
 
   return results;
-};
+}
